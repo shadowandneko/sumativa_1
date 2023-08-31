@@ -1,0 +1,7 @@
+{
+  "name": "support-me",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
