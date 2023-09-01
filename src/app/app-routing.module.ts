@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'view-email',
+    loadChildren: () => import('./view-email/view-email.module').then( m => m.ViewEmailPageModule)
+  },
 ];
 
 @NgModule({

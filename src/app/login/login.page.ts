@@ -51,4 +51,10 @@ export class LoginPage {
     });
     await alert.present();
   }
+
+  async resetPassword() {
+    this.router.navigateByUrl('/view-email');
+  }
+
+  
 }
