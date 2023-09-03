@@ -1,18 +1,51 @@
-/* src/app/pages/home/home.page.scss */
 ion-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 
-  .image-container {
+  .welcome-container {
     text-align: center;
     background-color: #f2f2f2;
-  }
+    position: relative;
+    overflow: hidden;
 
-  img {
+    .welcome-image {
+      object-fit: cover;
+      width: 100%; /* hacer que la imagen llene todo el contenedor */
+      height: 50%;
+      margin-top: -30%;
+    }
 
-    object-fit: cover;
+    .typing-effect {
+      position: absolute;
+      top: 65%; /* centrar el texto verticalmente */
+      left: 50%; /* centrar el texto horizontalmente */
+      transform: translate(-50%, -50%); /* posicionamiento central */
+      font-size: 24px;
+      white-space: pre;
+      font-weight: bold;
+      span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(1em);
+        animation: typing 1s forwards;
+        animation-delay: calc(0.1s * var(--char-index));
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* shadow */
+
+        &::after {
+          content: '\00a0'; /* Utilice espacios continuos en lugar de espacios normales. */
+          display: inline-block;
+          width: 0; /* Establezca el ancho en 0 y no ocupará espacio cuando se muestre palabra por palabra. */
+        }
+      }
+    }
   }
 }
 
+@keyframes typing {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
