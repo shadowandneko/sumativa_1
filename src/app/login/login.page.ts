@@ -25,7 +25,11 @@ export class LoginPage {
       if (this.username === userData.username && this.password === userData.password) {
         // Successful login
         await this.showLoginSuccessAlert();
-        this.router.navigateByUrl('/map-view'); // Redirect to user page (e.g., /map-view)
+
+        // Store the username in local storage
+        localStorage.setItem('loggedInUsername', this.username);
+
+        this.router.navigateByUrl('/share-location'); // Redirect to user page (e.g., /share-location)
       } else {
         await this.showLoginErrorAlert();
       }
@@ -55,6 +59,4 @@ export class LoginPage {
   async resetPassword() {
     this.router.navigateByUrl('/view-email');
   }
-
-  
 }

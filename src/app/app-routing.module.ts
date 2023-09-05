@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'view-email',
     loadChildren: () => import('./view-email/view-email.module').then( m => m.ViewEmailPageModule)
   },
+  {
+    path: 'other-view',
+    loadChildren: () => import('./other-view/other-view.module').then( m => m.OtherViewPageModule)
+  },
+  {
+    path: 'contact-list',
+    loadChildren: () => import('./contact-list/contact-list.module').then( m => m.ContactListPageModule)
+  },
 ];
 
 @NgModule({

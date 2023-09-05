@@ -35,6 +35,7 @@ export class RegisterPage {
 
       // Show registration success popup
       await this.showRegistrationSuccessAlert();
+      
 
       // Navigate to login page
       this.router.navigateByUrl('/login');

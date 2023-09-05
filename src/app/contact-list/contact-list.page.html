@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngFor="let contact of contacts">
+    <ion-card>
+      <ion-card-header>
+        Name: {{ contact.name }}
+      </ion-card-header>
+      <ion-card-content>
+        Phone: {{ contact.phone }}<br>
+        Address: {{ contact.address }}<br>
+        Email: {{ contact.email }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -8,12 +8,15 @@ import { ShareLocationPageRoutingModule } from './share-location-routing.module'
 
 import { ShareLocationPage } from './share-location.page';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ShareLocationPageRoutingModule
+    ShareLocationPageRoutingModule,
+    MatProgressSpinnerModule
   ],
   declarations: [ShareLocationPage]
 })
