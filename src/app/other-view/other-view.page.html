@@ -1,34 +1,32 @@
+<!-- src/app/pages/other-view/other-view.page.html -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>Add Contact</ion-title>
+    <ion-title>Other View</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="closeModal()">
-        <ion-icon name="close"></ion-icon>
-      </ion-button>
+      <ion-button (click)="closeModal()">Close</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item>
-    <ion-label position="floating">Name</ion-label>
-    <ion-input [(ngModel)]="contact.name" type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Phone</ion-label>
-    <ion-input [(ngModel)]="contact.phone" type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Address</ion-label>
-    <ion-input [(ngModel)]="contact.address" type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input [(ngModel)]="contact.email" type="email"></ion-input>
-  </ion-item>
-
-  <ion-button expand="full" (click)="saveContact()">Save</ion-button>
+  <form #contactForm="ngForm" (ngSubmit)="saveContact()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" name="name" [(ngModel)]="contact.name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input type="tel" name="phone" [(ngModel)]="contact.phone" pattern="[0-9]*" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input type="text" name="address" [(ngModel)]="contact.address" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="contact.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!contactForm.valid">Save Contact</ion-button>
+  </form>
 </ion-content>

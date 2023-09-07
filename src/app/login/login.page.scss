@@ -1,17 +1,56 @@
-/* src/app/pages/login/login.page.scss */
+
+/* 设置背景图片 */
 ion-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  
-    .login-button {
-      background: linear-gradient(to bottom, white, black);
-      color: white;
-    }
-  
-    ion-item {
-      margin-bottom: 15px;
-    }
+  background-image: url('#'); /* 修改为你的背景图片路径 */
+  background-size: cover; /* 让背景图片充满整个页面 */
+}
+
+
+.custom-button {
+  width: 100%; /* 拉长按钮，使其水平充满父容器 */
+  height: 50px; /* 设置按钮的高度，根据需要进行调整 */
+  background-color: t+ransparent; /* 初始状态为透明背景 */
+  border: 2px solid transparent; /* 初始状态为透明边框 */
+  border-radius: 50px; /* 设置按钮为椭圆形 */
+  padding: 10px 20px; /* 调整按钮的内边距 */
+  color: #FFD700; /* 设置文字颜色为淡黄色 */
+  text-align: center; /* 文字居中对齐 */
+  cursor: pointer; /* 显示手型光标 */
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s, margin-top 0.3s; /* 添加过渡效果 */
+  margin-top: 10px; /* 向下移动按钮 */
+}
+
+.custom-button:hover {
+  background-color: #FFD700; /* 设置鼠标悬停时的背景色为淡黄色 */
+}
+
+.custom-button:active {
+  background-color: #FFA500; /* 设置按钮点击时的背景色为橙色 */
+  border: 2px solid transparent; /* 清除点击时的边框 */
+  box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.5); /* 添加点击效果的阴影 */
+  margin-top: 12px; /* 向下移动按钮，增加点击效果 */
+}
+
+
+
+
+/* 修改链接样式 */
+ion-content a {
+  color: #FFD700; /* 设置链接文字颜色为淡黄色 */
+}
+
+ion-content a:hover {
+  text-decoration: underline; /* 添加鼠标悬停时的下划线效果 */
+}
+
+ion-header {
+  ion-toolbar {
+    --background: rgb(95, 234, 234); /* 这里的 teal 是蓝绿色的示例颜色，您可以根据需要更改为其他颜色 */
   }
-  
+}
+
+.center-content {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+}

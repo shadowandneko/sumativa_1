@@ -1,9 +1,13 @@
-<!-- src/app/pages/register/register.page.html -->
 <ion-header>
   <ion-toolbar>
     <ion-title>
       Register
     </ion-title>
+    <ion-buttons slot="end"> <!-- 将按钮放在标题栏的右侧 -->
+      <ion-button (click)="goToLoginPage()" color="dark"> <!-- 设置按钮颜色为黑色 -->
+        X
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

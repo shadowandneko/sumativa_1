@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -51,6 +52,12 @@ const routes: Routes = [
     path: 'contact-list',
     loadChildren: () => import('./contact-list/contact-list.module').then( m => m.ContactListPageModule)
   },
+  {
+    path: 'lost',
+    loadChildren: () => import('./lost/lost.module').then( m => m.LostPageModule)
+  },
+  
+  { path: '**', redirectTo: '/lost' },
 ];
 
 @NgModule({

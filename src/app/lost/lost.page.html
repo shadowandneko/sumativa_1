@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lost</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>YOU ARE LAST</h2>
+  <p>YOUR ADDRESS IS NOT OK。</p>
+  <p>CHECK THIS LINK BACK LOGIN：</p>
+  <ion-button (click)="redirectToLogin()" expand="full">BACK LOGIN</ion-button>
+</ion-content>
+
+<mat-chip-listbox aria-label="Fish selection">
+  <mat-chip-option>One fish</mat-chip-option>
+  <mat-chip-option>Two fish</mat-chip-option>
+  <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+  <mat-chip-option color="warn">Warn fish</mat-chip-option>
+</mat-chip-listbox>
+
+
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>

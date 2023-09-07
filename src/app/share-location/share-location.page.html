@@ -10,6 +10,7 @@
 <ion-content id="main-content" class="ion-padding">
   <!-- 主要内容 -->
   <!-- Other content for the Share Location page -->
+  <ion-searchbar class="custom-searchbar"></ion-searchbar>
 
   <!-- 添加加号按钮 -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
@@ -19,7 +20,7 @@
   </ion-fab>
 </ion-content>
 
-<ion-menu contentId="main-content" side="end" menuId="main-menu">
+<ion-menu contentId="main-content" side="end" menuId="main-menu"swipeGesture="false">
   <ion-header>
     <ion-toolbar>
 
@@ -39,7 +40,9 @@
     <ion-button (click)="showContactList()">
       <ion-icon name="people"></ion-icon>
     </ion-button>
-  
+    <ion-button (click)="cerra()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    </ion-button>
   </ion-content>
 </ion-menu>
 

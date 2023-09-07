@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -15,10 +15,19 @@ export class RegisterPage {
   address: string = '';
   age: number = 0;
 
+  goToLoginPage() {
+    // 使用Router导航到登录页面
+    this.router.navigate(['/login']); // '/login' 是您的登录页面的路由路径
+  }
+
   constructor(
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private navCtrl: NavController
   ) {}
+
+  
+  
 
   async register() {
     if (this.validatePassword()) {
@@ -82,4 +91,9 @@ export class RegisterPage {
       lengthValid
     );
   }
+  validateUsername(): boolean {
+    const usernameRegex = /^[A-Za-z]+$/; // 只包含字母的正则表达式
+    return usernameRegex.test(this.username);
+  }
+
 }

@@ -3,6 +3,11 @@
     <ion-title>
       Reset Password
     </ion-title>
+    <ion-buttons slot="end"> <!-- 将按钮放在标题栏的右侧 -->
+      <ion-button (click)="goToLoginPage()" color="dark"> <!-- 设置按钮颜色为黑色 -->
+        X
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,20 +21,7 @@
   <ion-button expand="full" (click)="sendEmail()">Send Email</ion-button>
 </ion-content>
 <!-- ... other content ...------------------------------------------------------------------ -->
-<ion-content class="ion-padding">
-  <ion-button id="modal-trigger">Present Modal</ion-button>
-  <ion-modal trigger="modal-trigger">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Modal</ion-title>
-        <ion-buttons slot="end">
-          <ion-button onclick="closeModal()">Close</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding"> Modal Content </ion-content>
-  </ion-modal>
-</ion-content>
+
 
 <script>
   const modal = document.querySelector('ion-modal');

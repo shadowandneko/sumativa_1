@@ -3,6 +3,7 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { OtherViewPage } from '../other-view/other-view.page';
 import { ContactService, Contact } from '../contact.service';
 import { ContactListPage } from '../contact-list/contact-list.page'; 
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-share-location',
   templateUrl: './share-location.page.html',
@@ -15,7 +16,8 @@ export class ShareLocationPage {
   constructor(
     private modalController: ModalController,
     private alertController: AlertController,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private router: Router
   ) {}
 
   ionViewWillEnter() {
@@ -46,5 +48,8 @@ export class ShareLocationPage {
     } catch (error) {
       console.error('Error opening contact list modal:', error);
     }
+  }
+  cerra() {
+    this.router.navigate(['/login']);
   }
 }
