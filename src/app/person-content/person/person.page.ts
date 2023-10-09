@@ -25,20 +25,42 @@ export class PersonPage {
   loadContacts() {
     this.contactService.getContacts().subscribe(
       (data) => {
-        this.contacts = data;
+        // 在这里处理数据格式
+        this.contacts = this.transformData(data);
       },
       (error) => {
         console.error('Error loading contacts', error);
       }
     );
   }
+  
+  // 自定义方法，用于将数据转换为所需的格式
+  transformData(data: any[]): ClContact[] {
+    // 在这里进行数据格式转换的逻辑
+    const transformedData: ClContact[] = data.map((item) => {
+      // 如果数据中包含 "contact" 属性，则使用 "contact" 中的数据，否则使用原始数据
+      const contactInfo = item.contact ? item.contact : item;
+  
+      return {
+        id: item.id,
+        name: contactInfo.name,
+        phone: contactInfo.phone,
+        address: contactInfo.address,
+        email: contactInfo.email,
+        // 可以根据需要添加更多字段的转换
+      };
+    });
+  
+    return transformedData;
+  }
+  
 
-  async editContact(contact: ClContact) {
+  async editContact(contact: ClContact | { contact: ClContact, id: number }) {
     const modal = await this.modalController.create({
       component: EditContactPage,
-      componentProps: { contact },
+      componentProps: { contact: 'contact' in contact ? contact.contact : contact },
     });
-
+  
     modal.onDidDismiss().then((result) => {
       if (result.data) {
         const updatedContact = result.data;
@@ -52,7 +74,7 @@ export class PersonPage {
         );
       }
     });
-
+  
     await modal.present();
   }
 
@@ -88,12 +110,13 @@ export class PersonPage {
     const modal = await this.modalController.create({
       component: EditContactPage,
     });
-
+  
     modal.onDidDismiss().then((result) => {
       if (result.data) {
-        this.contactService.addContact(result.data).subscribe(
+        const newContact = result.data; // 获取新添加的联系人数据
+        this.contactService.addContact(newContact).subscribe(
           () => {
-            this.loadContacts();
+            this.loadContacts(); // 重新加载联系人列表
           },
           (error) => {
             console.error('Error adding contact', error);
@@ -101,7 +124,7 @@ export class PersonPage {
         );
       }
     });
-
+  
     await modal.present();
   }
 }

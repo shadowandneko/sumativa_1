@@ -12,14 +12,14 @@
 <ion-content class="ion-padding">
   <ion-card *ngFor="let contact of contacts">
     <ion-card-header>
-      {{ contact.name }}
+      Name: {{ contact.name }}
     </ion-card-header>
     <ion-card-content>
-      <p>Phone: {{ contact.phone }}</p>
-      <p>Address: {{ contact.address }}</p>
-      <p>Email: {{ contact.email }}</p>
+      Phone: {{ contact.phone }}<br>
+      Address: {{ contact.address }}<br>
+      Email: {{ contact.email }}
     </ion-card-content>
     <ion-button (click)="editContact(contact)">Edit</ion-button>
-    <ion-button color="danger" (click)="deleteContact(contact)">Delete</ion-button>
+    <ion-button (click)="deleteContact(contact)">Delete</ion-button>
   </ion-card>
 </ion-content>
