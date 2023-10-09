@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contacts</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addContact()">
+        <ion-icon name="add"></ion-icon> Add Contact
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let contact of contacts">
+    <ion-card-header>
+      {{ contact.name }}
+    </ion-card-header>
+    <ion-card-content>
+      <p>Phone: {{ contact.phone }}</p>
+      <p>Address: {{ contact.address }}</p>
+      <p>Email: {{ contact.email }}</p>
+    </ion-card-content>
+    <ion-button (click)="editContact(contact)">Edit</ion-button>
+    <ion-button color="danger" (click)="deleteContact(contact)">Delete</ion-button>
+  </ion-card>
+</ion-content>

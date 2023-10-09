@@ -56,8 +56,36 @@ const routes: Routes = [
     path: 'lost',
     loadChildren: () => import('./lost/lost.module').then( m => m.LostPageModule)
   },
+  {
+    path: 'product-add',
+    loadChildren: () => import('./producto/product-add/product-add.module').then( m => m.ProductAddPageModule)
+  },
+  {
+    path: 'product-list',
+    loadChildren: () => import('./producto/product-list/product-list.module').then( m => m.ProductListPageModule)
+  },
+  {
+    path: 'product-detail/:id',
+    loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+  },
+  {
+    path: 'product-edit/:id',
+    loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
+  },
+  {
+    path: 'product-all',
+    loadChildren: () => import('./producto/product-all/product-all.module').then( m => m.ProductAllPageModule)
+  },
   
+  {
+    path: 'person',
+    loadChildren: () => import('./person-content/person/person.module').then( m => m.PersonPageModule)
+  },
   { path: '**', redirectTo: '/lost' },
+  {
+    path: 'edit-contact',
+    loadChildren: () => import('./person-content/edit-contact/edit-contact.module').then( m => m.EditContactPageModule)
+  },
 ];
 
 @NgModule({

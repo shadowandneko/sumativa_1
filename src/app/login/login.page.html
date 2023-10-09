@@ -1,13 +1,15 @@
 <ion-header>
-  <ion-toolbar >
-    <ion-title class="center-content">Login</ion-title>
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-
+  <ion-toolbar>
+    <ion-title class="ion-text-center" style="margin-top: 1px;">Login</ion-title>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" style="position: absolute; top: 5px; left: 5px;"></mat-icon>
   </ion-toolbar>
-  
 </ion-header>
 
+
 <ion-content class="ion-padding" [scrollY]="false" [scrollX]="false">
+  <!-- 放置图片 -->
+  
+
   <ion-item>
     <ion-label position="floating">Username</ion-label>
     <ion-input [(ngModel)]="username" type="text"></ion-input>
@@ -18,12 +20,7 @@
     <ion-input [(ngModel)]="password" type="password"></ion-input>
   </ion-item>
 
-
-  
   <button mat-stroked-button color="primary" (click)="login()" class="custom-button">Login</button>
-
-
-
 
   <div class="ion-text-center">
     <p>Don't have an account? <a routerLink="/register">Register</a></p>

@@ -1,10 +1,4 @@
 
-/* 设置背景图片 */
-ion-content {
-  background-image: url('#'); /* 修改为你的背景图片路径 */
-  background-size: cover; /* 让背景图片充满整个页面 */
-}
-
 
 .custom-button {
   width: 100%; /* 拉长按钮，使其水平充满父容器 */
@@ -54,3 +48,4 @@ ion-header {
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
 }
+

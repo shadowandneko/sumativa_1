@@ -1,7 +1,15 @@
 {
   "name": "support-me",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "plugins": {
+        "@capacitor-community/google-maps": {
+          "apiKey": "AIzaSyAbBUI4NYtxMFDCOlq2Bky6cvrnIiiPqic"
+        }
+      }
+    }
   },
   "type": "angular"
+  
+  
 }

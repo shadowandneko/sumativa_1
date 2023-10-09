@@ -4,6 +4,7 @@ import { OtherViewPage } from '../other-view/other-view.page';
 import { ContactService, Contact } from '../contact.service';
 import { ContactListPage } from '../contact-list/contact-list.page'; 
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-share-location',
   templateUrl: './share-location.page.html',
