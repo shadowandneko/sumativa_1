@@ -81,11 +81,15 @@ const routes: Routes = [
     path: 'person',
     loadChildren: () => import('./person-content/person/person.module').then( m => m.PersonPageModule)
   },
-  { path: '**', redirectTo: '/lost' },
   {
     path: 'edit-contact',
     loadChildren: () => import('./person-content/edit-contact/edit-contact.module').then( m => m.EditContactPageModule)
   },
+  {
+    path: 'modify-contact',
+    loadChildren: () => import('./person-content/modify-contact/modify-contact.module').then( m => m.ModifyContactPageModule)
+  },
+  { path: '**', redirectTo: '/lost' },
 ];
 
 @NgModule({

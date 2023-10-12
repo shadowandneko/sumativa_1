@@ -40,10 +40,13 @@ export class ContactService {
   // 更新联系人
   updateContact(contact: ClContact): Observable<ClContact> {
     const url = `${apiUrl}/${contact.id}`;
+    console.log('Update URL:', url); // 输出 URL
+    console.log('Contact Data:', contact); // 输出联系人数据
     return this.http.put<ClContact>(url, contact, httpOptions).pipe(
       catchError(this.handleError<ClContact>('updateContact'))
     );
   }
+  
 
   // 删除联系人
   deleteContact(id: number): Observable<ClContact> {

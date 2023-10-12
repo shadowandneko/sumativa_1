@@ -53,4 +53,10 @@ export class ShareLocationPage {
   cerra() {
     this.router.navigate(['/login']);
   }
+
+  person() {
+    this.router.navigate(['/person']);
+  }
+
+  
 }

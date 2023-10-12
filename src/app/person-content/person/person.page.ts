@@ -3,7 +3,7 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { ContactService } from '../contact.service';
 import { EditContactPage } from '../edit-contact/edit-contact.page';
 import { ClContact } from '../models/ClContact';
-
+import { ModifyContactPage } from '../modify-contact/modify-contact.page'; // 使用 modify-contact 页面
 @Component({
   selector: 'app-person',
   templateUrl: './person.page.html',
@@ -57,26 +57,41 @@ export class PersonPage {
 
   async editContact(contact: ClContact | { contact: ClContact, id: number }) {
     const modal = await this.modalController.create({
-      component: EditContactPage,
+      component: ModifyContactPage, // 使用 ModifyContactPage 页面
       componentProps: { contact: 'contact' in contact ? contact.contact : contact },
     });
-  
+
     modal.onDidDismiss().then((result) => {
       if (result.data) {
-        const updatedContact = result.data;
-        this.contactService.updateContact(updatedContact).subscribe(
-          () => {
-            this.loadContacts();
-          },
-          (error) => {
-            console.error('Error updating contact', error);
-          }
-        );
+        const updatedContact = result.data.contact;
+        if (result.data.action === 'update') {
+          // 更新联系人操作
+          this.contactService.updateContact(updatedContact).subscribe(
+            () => {
+              this.loadContacts();
+            },
+            (error) => {
+              console.error('Error updating contact', error);
+            }
+          );
+        } else if (result.data.action === 'create') {
+          // 创建新联系人操作
+          this.contactService.addContact(updatedContact).subscribe(
+            () => {
+              this.loadContacts();
+            },
+            (error) => {
+              console.error('Error adding contact', error);
+            }
+          );
+        }
       }
     });
-  
+
     await modal.present();
   }
+  
+  
 
   async deleteContact(contact: ClContact) {
     const alert = await this.alertController.create({
