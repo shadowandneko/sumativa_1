@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
+import { Plugins } from '@capacitor/core';
+
+const { GoogleMaps } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -16,5 +20,12 @@ export class AppComponent {
     { title: 'Producto/Crud', url: 'product-all', icon: 'mail' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor() {
+    if (Capacitor.isPluginAvailable('GoogleMaps')) {
+      GoogleMaps['initialize']({
+        apiKey: 'AIzaSyAbBUI4NYtxMFDCOlq2Bky6cvrnIiiPqic'
+      });
+    }
+    
+  }
 }

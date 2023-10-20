@@ -142,4 +142,8 @@ export class PersonPage {
   
     await modal.present();
   }
+  cancel() {
+    // 关闭编辑页面，不做任何操作
+    this.modalController.dismiss({ action: 'cancel' });
+  }
 }

@@ -4,12 +4,10 @@
     "capacitor": {
       "plugins": {
         "@capacitor-community/google-maps": {
-          "apiKey": "AIzaSyAbBUI4NYtxMFDCOlq2Bky6cvrnIiiPqic"
+          "apiKey": "AIzaSyC8msE8467b0nZjP0VgTy_XsJ7TFJsLJS0"
         }
       }
     }
   },
   "type": "angular"
-  
-  
 }

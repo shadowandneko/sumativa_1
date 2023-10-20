@@ -89,7 +89,19 @@ const routes: Routes = [
     path: 'modify-contact',
     loadChildren: () => import('./person-content/modify-contact/modify-contact.module').then( m => m.ModifyContactPageModule)
   },
-  { path: '**', redirectTo: '/lost' },
+  
+  {
+    path: 'register1',
+    loadChildren: () => import('./login2.0/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
 ];
 
 @NgModule({

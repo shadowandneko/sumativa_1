@@ -1,13 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Contacts</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="addContact()">
-        <ion-icon name="add"></ion-icon> Add Contact
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+  <ion-header>
+    <ion-toolbar>
+      
+      <ion-title>Contacts</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="addContact()">
+          <ion-icon name="add"></ion-icon> Add Contact
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content class="ion-padding">
   <ion-card *ngFor="let contact of contacts">
