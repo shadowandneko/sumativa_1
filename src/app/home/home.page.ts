@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +6,16 @@ import { Router } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    const shouldDisplayInfo = true; // Replace this with your condition
+
+    if (shouldDisplayInfo) {
+      this.router.navigate([{ outlets: { info: ['info'] } }]);
+    }
+
     const typingEffect = document.querySelector('.typing-effect');
     const spans = typingEffect?.querySelectorAll('span');
 
@@ -21,6 +27,6 @@ export class HomePage {
 
     setTimeout(() => {
       this.router.navigateByUrl('/login');
-    }, 4500);
+    }, 4000);
   }
 }

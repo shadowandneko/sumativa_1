@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": "08-G06-00",
+      "username": "user1",
+      "password": "password1",
+      "email": "user1@example.com",
+      "address": "Address 1",
+      "phone": "1234567890"
+    },
+    {
+      "id": "08-G06-01",
+      "username": "user2",
+      "password": "password2",
+      "email": "user2@example.com",
+      "address": "Address 2",
+      "phone": "2345678901"
+    },
+    {
+      "id": "08-G06-02",
+      "username": "user3",
+      "password": "password3",
+      "email": "user3@example.com",
+      "address": "Address 3",
+      "phone": "3456789012"
+    },
+    {
+      "id": "08-G06-03",
+      "username": "user4",
+      "password": "password4",
+      "email": "user4@example.com",
+      "address": "Address 4",
+      "phone": "4567890123"
+    },
+    {
+      "id": "08-G06-04",
+      "username": "user5",
+      "password": "password5",
+      "email": "user5@example.com",
+      "address": "Address 5",
+      "phone": "5678901234"
+    },
+    {
+      "id": "08-G06-50",
+      "username": "Niko",
+      "password": "Niko123456.",
+      "email": "niko@gmail.com",
+      "address": "rigoberto jara 299",
+      "phone": "931466246"
+    },
+    {
+      "id": "08-G06-73",
+      "username": "HELLO",
+      "password": "Hello123456.",
+      "email": "hello@gmail.com",
+      "address": "santiago",
+      "phone": "931466246"
+    }
+  ]
+}

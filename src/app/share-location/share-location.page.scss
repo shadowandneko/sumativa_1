@@ -1,9 +1,72 @@
+/* 设置全局文本左对齐 */
 .left-align-text {
-    text-align: left; /* 设置文本靠左对齐 */
-  }
+  text-align: left;
+}
 
-  ion-header {
-    ion-toolbar {
-      --background: rgb(95, 234, 234); /* 这里的 teal 是蓝绿色的示例颜色，您可以根据需要更改为其他颜色 */
-    }
-  }
+/* 顶部工具栏背景颜色 */
+ion-header ion-toolbar {
+  --background: rgb(95, 234, 234); /* 你想要的颜色 */
+}
+
+/* 自定义搜索栏样式 */
+ion-searchbar.custom-searchbar {
+  position: absolute;
+  top: 600px;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 60px;
+  background: white;
+}
+
+/* 地图容器样式 */
+.map-container {
+  position: relative;
+}
+
+/* 地图样式 */
+.map-container div {
+  position: absolute;
+  z-index: -1;
+}
+
+/* 按钮样式 */
+.styled-button {
+  border-radius: 8px;
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* 菜单样式 */
+.styled-menu {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 按钮容器样式 */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* 圆形按钮样式 */
+.rounded-button {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 图标样式 */
+.rounded-button ion-icon {
+  font-size: 24px;
+}

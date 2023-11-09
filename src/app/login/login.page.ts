@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { UserService } from '../login2.0/user-service.service';
+import { ClUser } from '../login2.0/modelss/user.model';
 
 @Component({
   selector: 'app-login',
@@ -13,31 +15,28 @@ export class LoginPage {
 
   constructor(
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private userService: UserService
   ) {}
 
+  // 登录方法
   async login() {
-    // Get user data from localStorage
-    const storedUserData = localStorage.getItem('userData');
-    if (storedUserData) {
-      const userData = JSON.parse(storedUserData);
+    this.userService.getUsers().subscribe((users: ClUser[]) => {
+      const user = users.find((user) => user.username === this.username && user.password === this.password);
+      
+      if (user) {
+        this.userService.setLoggedInUser(user); // 将登录的用户存储在UserService中
 
-      if (this.username === userData.username && this.password === userData.password) {
-        // Successful login
-        await this.showLoginSuccessAlert();
-
-        // Store the username in local storage
+        this.showLoginSuccessAlert();
         localStorage.setItem('loggedInUsername', this.username);
-
-        this.router.navigateByUrl('/share-location'); // Redirect to user page (e.g., /share-location)
+        this.router.navigateByUrl('/share-location'); // 重定向到用户页面（例如：/share-location）
       } else {
-        await this.showLoginErrorAlert();
+        this.showLoginErrorAlert();
       }
-    } else {
-      await this.showLoginErrorAlert();
-    }
+    });
   }
 
+  // 显示登录成功的警报
   async showLoginSuccessAlert() {
     const alert = await this.alertController.create({
       header: 'Login Success',
@@ -47,6 +46,7 @@ export class LoginPage {
     await alert.present();
   }
 
+  // 显示登录错误的警报
   async showLoginErrorAlert() {
     const alert = await this.alertController.create({
       header: 'Login Error',
@@ -56,7 +56,8 @@ export class LoginPage {
     await alert.present();
   }
 
-  async resetPassword() {
+  // 重置密码
+  resetPassword() {
     this.router.navigateByUrl('/view-email');
   }
 }

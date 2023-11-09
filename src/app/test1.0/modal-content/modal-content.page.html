@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Product</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Edit Product
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Product Name</ion-label>
+          <ion-input [(ngModel)]="product.nombreprod" name="product-name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Price</ion-label>
+          <ion-input [(ngModel)]="product.precio" name="product-price" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Quantity</ion-label>
+          <ion-input [(ngModel)]="product.cantidad" name="product-quantity" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date of Birth</ion-label>
+          <ion-input [(ngModel)]="product.fechaNacimiento" name="product-date" type="date"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">RUT</ion-label>
+          <ion-input [(ngModel)]="product.rut" name="product-rut"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">DV</ion-label>
+          <ion-input [(ngModel)]="product.dv" name="product-dv"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Disease</ion-label>
+          <ion-input [(ngModel)]="product.enfermedad" name="product-disease"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contact Phone</ion-label>
+          <ion-input [(ngModel)]="product.fonocontacto" name="product-phone" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Category</ion-label>
+          <ion-input [(ngModel)]="product.categoria" name="product-category"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Editorial</ion-label>
+          <ion-input [(ngModel)]="product.editorial" name="product-editorial"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Race</ion-label>
+          <ion-input [(ngModel)]="product.raza" name="product-race"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Age</ion-label>
+          <ion-input [(ngModel)]="product.edad" name="product-age" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Height</ion-label>
+          <ion-input [(ngModel)]="product.altura" name="product-height" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Start Hour</ion-label>
+          <ion-input [(ngModel)]="product.hrini" name="product-start-hour"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">End Hour</ion-label>
+          <ion-input [(ngModel)]="product.hrfin" name="product-end-hour"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Address</ion-label>
+          <ion-input [(ngModel)]="product.direccion" name="product-address"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="full" (click)="saveChanges()">Save Changes</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

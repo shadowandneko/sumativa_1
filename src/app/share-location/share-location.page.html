@@ -7,51 +7,51 @@
   </ion-toolbar>
 </ion-header>
 
+  
+
 <ion-content id="main-content" class="ion-padding">
   <!-- 主要内容 -->
+  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
+  <div #mapElement id="map" style="width: 100%; height: 400px;"></div>
+
+  <!-- Add a map placeholder (you can customize this) -->
   
 
-
-
-  
   <!-- Other content for the Share Location page -->
-  <ion-searchbar class="custom-searchbar"></ion-searchbar>
 
-  <!-- 添加加号按钮 -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="openAddContactModal()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
+  <!-- Add the plus button -->
+  
 </ion-content>
 
-<ion-menu contentId="main-content" side="end" menuId="main-menu"swipeGesture="false">
+<ion-menu contentId="main-content" side="end" menuId="main-menu" swipeGesture="false" class="styled-menu">
   <ion-header>
     <ion-toolbar>
-
       <ion-avatar>
         <img src="assets/user.jpeg" alt="User Avatar" />
       </ion-avatar>
-      
-      <div class="left-align-text">
-        <p>Welcome, {{ loggedInUsername }}!</p>
-      </div>
 
+      <div *ngIf="loggedInUserData">
+        <p>User ID: {{ loggedInUserData.id }}</p>
+        <p>User Name: {{ loggedInUserData.username }}</p>
+      </div>
     </ion-toolbar>
   </ion-header>
-  
-  <ion-content>
-    <!-- 侧边栏内容 -->
-    <!-- Your menu content goes here -->
-    <ion-button (click)="showContactList()">
-      <ion-icon name="people"></ion-icon>
+
+  <ion-content class="styled-content">
+    <!-- ... -->
+    <ion-button expand="full" class="rounded-button" (click)="login()">
+      <ion-icon name="home-outline"></ion-icon>
     </ion-button>
-    <ion-button (click)="cerra()">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    <ion-button expand="full" class="rounded-button" (click)="navigateToProductCreate()">
+      <ion-icon name="person-add-outline"></ion-icon>
     </ion-button>
-    <ion-button (click)="person()">
-      <ion-icon name="people"></ion-icon>
+    <ion-button expand="full" class="rounded-button" (click)="navigateToPersonList()">
+      <ion-icon name="people-outline"></ion-icon>
     </ion-button>
+    <ion-button expand="full" class="rounded-button" (click)="Camara()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-button>
+    
   </ion-content>
 </ion-menu>
-

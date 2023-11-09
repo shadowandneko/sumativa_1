@@ -9,7 +9,7 @@ import { PhotoService } from './photo.service';
 export class CameraPage implements OnInit {
   capturedImage: string = ''; // 用于存储拍摄的照片
 
-  constructor(public photoService: PhotoService) {}
+  constructor(public   photoService: PhotoService) {}
 
   ngOnInit() {}
 

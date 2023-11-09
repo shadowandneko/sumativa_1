@@ -1,33 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title class="ion-text-center" style="margin-top: 1px;">Login</ion-title>
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" style="position: absolute; top: 5px; left: 5px;"></mat-icon>
+  <ion-toolbar style="--background: rgb(95, 234, 234);">
+    <ion-title class="ion-text-center">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content class="ion-padding" [scrollY]="false" [scrollX]="false">
-  <!-- 放置图片 -->
+  <div class="video-background">
+    <video autoplay muted loop id="videoBG">
+      <source src="assets/009.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="content-container">
+    <div class="login-container">
+      <div class="input-container">
+        <ion-item class="transparent-input">
+          <ion-label position="floating">Username</ion-label>
+          <ion-input [(ngModel)]="username" type="text" id="username"></ion-input>
+        </ion-item>
   
-
-  <ion-item>
-    <ion-label position="floating">Username</ion-label>
-    <ion-input [(ngModel)]="username" type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
-
-  <button mat-stroked-button color="primary" (click)="login()" class="custom-button">Login</button>
-
-  <div class="ion-text-center">
-    <p>Don't have an account? <a routerLink="/register">Register</a></p>
+        <ion-item class="transparent-input">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input [(ngModel)]="password" type="password" id="password"></ion-input>
+        </ion-item>
+      </div>
+  
+      <button class="custom-button" (click)="login()">Login</button>
+  
+      <div class="additional-links">
+        <p>Don't have an account? <a routerLink="/register1">Register</a></p>
+        <p>Forgot your password? <a routerLink="/view-email">Reset Password</a></p>
+      </div>
+    </div>
   </div>
-  <div class="ion-text-center">
-    <p>
-      Forgot your password? <a routerLink="/view-email">Reset Password</a>
-    </p>
-  </div>
+  
 </ion-content>

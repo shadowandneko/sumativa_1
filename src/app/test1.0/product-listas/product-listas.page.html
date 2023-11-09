@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button> <!-- 返回按钮 -->
+    </ion-buttons>
+    <ion-title>Product List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let product of products">
+    <ion-card-content>
+      <ion-card-title>Name: {{ product.nombreprod }}</ion-card-title>
+      <p>Phone: {{ product.fonocontacto }}</p>
+      <p>Age: {{ product.edad }}</p>
+      <p>Address: {{ product.direccion }}</p>
+      <p>Date of Birth: {{ product.fechaNacimiento }}</p>
+      <ion-button (click)="openProductDetails(product)">Modify</ion-button>
+      <ion-button (click)="deleteProduct(product.idProducto)">Delete</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

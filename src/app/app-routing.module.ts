@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { InfoGuard } from './info.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canLoad: [InfoGuard] // Use InfoGuard to determine whether to display additional info
   },
   {
     path: 'share-location',
@@ -102,6 +103,19 @@ const routes: Routes = [
     path: 'map',
     loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
   },
+  {
+    path: 'product-create',
+    loadChildren: () => import('./test1.0/product-create/product-create.module').then( m => m.ProductCreatePageModule)
+  },
+  {
+    path: 'product-listas',
+    loadChildren: () => import('./test1.0/product-listas/product-listas.module').then( m => m.ProductListasPageModule)
+  },
+  {
+    path: 'modal-content',
+    loadChildren: () => import('./test1.0/modal-content/modal-content.module').then( m => m.ModalContentPageModule)
+  },
+  
 ];
 
 @NgModule({
