@@ -19,5 +19,4 @@
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
         <item name="android:background">@drawable/splash</item>
     </style>
-    <string name="google_maps_key">AIzaSyC8msE8467b0nZjP0VgTy_XsJ7TFJsLJS0</string>
 </resources>

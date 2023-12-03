@@ -55,6 +55,22 @@
       "email": "hello@gmail.com",
       "address": "santiago",
       "phone": "931466246"
+    },
+    {
+      "id": "08-G06-39",
+      "username": "sfuentes",
+      "password": "123",
+      "email": "sfuentesp@gmail.com",
+      "address": "los alerces12",
+      "phone": "99988998"
+    },
+    {
+      "id": "08-G06-98",
+      "username": "sfuentes",
+      "password": "123",
+      "email": "sfuentesp@gmail.com",
+      "address": "los alerces12",
+      "phone": "99988998"
     }
   ]
 }
